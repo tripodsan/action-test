@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Impersonated CI Trigger
     steps:
-    - name: Trigger
-      id: trigger
-      uses: tripodsan/touch-action@v1.2
-      with:
-        who-to-greet: 'Robbi the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.trigger.outputs.time }}"
+      - name: Trigger
+        id: trigger
+        uses: tripodsan/touch-action@v1.2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          who-to-greet: 'Robbi the Octocat'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.trigger.outputs.time }}"
