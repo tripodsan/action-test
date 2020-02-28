@@ -4,15 +4,15 @@ on:
       - 'master'
 
 jobs:
-  hello_world_job:
+  ci_trigger:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Impersonated CI Trigger
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: tripodsan/touch-action@v1.1
+    - name: Trigger
+      id: trigger
+      uses: tripodsan/touch-action@v1.2
       with:
         who-to-greet: 'Robbi the Octocat'
     # Use the output from the `hello` step
     - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      run: echo "The time was ${{ steps.trigger.outputs.time }}"
