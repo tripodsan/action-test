@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Trigger
         id: trigger
-        uses: tripodsan/touch-action@v1.5
+        uses: tripodsan/touch-action@v1.5.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           who-to-greet: 'Robbi the Octocat'
