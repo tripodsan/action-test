@@ -10,9 +10,7 @@ jobs:
     steps:
       - name: Trigger
         id: trigger
-        uses: tripodsan/touch-action@v1.3
+        uses: tripodsan/touch-action@v1.5.7
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          who-to-greet: 'Robbi the Octocat'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.trigger.outputs.time }}"
+          repo-token: ${{ secrets.MY_GITHUB_TOKEN }}
+          user: tripod-alt
