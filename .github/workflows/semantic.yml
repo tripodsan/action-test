@@ -1,4 +1,3 @@
-
 on:
   push:
     branches-ignore:
@@ -11,7 +10,6 @@ jobs:
     steps:
       - name: Comment
         id: comment
-        uses: trieloff/semantic-release-comment-action@master
+        uses: adobe-rnd/semantic-release-comment-action@use-comment-marker
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          user: github-actions
+          repo-token: ${{secrets.GITHUB_TOKEN}}
